@@ -104,14 +104,13 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         onRefresh: () async {
           await getData(eventService, categoryService, authService);
         },
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 60),
-          child: ListView.builder(
-            itemCount: events.length,
-            itemBuilder: (BuildContext context, int index) {
-              return _ListViewItem(index);
-            },
-          ),
+        child: ListView.builder(
+          reverse: true,
+          padding: const EdgeInsets.only(bottom: 75),
+          itemCount: events.length,
+          itemBuilder: (BuildContext context, int index) {
+            return _ListViewItem(index);
+          },
         ),
       );
     } else {

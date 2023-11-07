@@ -72,8 +72,10 @@ class _MyNavigatorState extends State<MyNavigator>
         bottom: 10,
         alignment: Alignment.bottomCenter,
         child: TabBar(
-          indicatorColor: Colors.white,
-          indicatorPadding: const EdgeInsets.fromLTRB(6, 0, 6, 0),
+          indicatorSize: TabBarIndicatorSize.label,
+          indicatorColor: MyColor.primary,
+          indicatorPadding: const EdgeInsets.fromLTRB(6, 0, 6, 3),
+          indicatorWeight: 3.5,
           controller: tabController,
           tabs: [
             TabsIcon(
@@ -97,7 +99,7 @@ class _MyNavigatorState extends State<MyNavigator>
         body: (context, controller) => TabBarView(
           controller: tabController,
           dragStartBehavior: DragStartBehavior.down,
-          physics: const BouncingScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           children: _widgetOptions,
         ),
       ),
